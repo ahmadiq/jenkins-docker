@@ -16,7 +16,7 @@ Running this container
 ----------------------
 
 ```
-docker run -it -p 8080:8080 --name jenkins -e SEED_GIT_URL=https://github.com/fabric8io/default-jenkins-dsl.git -e NEXUS_SERVICE_HOST=dockerhost -e NEXUS_SERVICE_PORT=8081 fabric8/jenkins
+docker run -it -p 8080:8080 --name jenkins -e SEED_GIT_URL=https://github.com/fabric8io/default-jenkins-dsl.git -e NEXUS_SERVICE_HOST=dockerhost -e NEXUS_SERVICE_PORT=8081 ahmadiq/jenkins
 ```
 
 Where `dockerhost` is the host running nexus. You may wish to [run nexus using these instructions](https://github.com/fabric8io/nexus-docker#running-this-container)
