@@ -16,6 +16,8 @@ COPY config/*.groovy /usr/share/jenkins/ref/init.groovy.d/
 COPY config/*.xml /usr/share/jenkins/ref/
 
 USER root
+RUN apt-get update && apt-get install -y vim
+
 RUN curl -o /usr/local/bin/kubectl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl \
     && chmod +x /usr/local/bin/kubectl
 
