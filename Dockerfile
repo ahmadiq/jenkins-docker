@@ -15,6 +15,6 @@ COPY config/*.groovy /usr/share/jenkins/ref/init.groovy.d/
 # lets configure Jenkins with some defaults
 COPY config/*.xml /usr/share/jenkins/ref/
 
-RUN  curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
-RUN  chmod +x ./kubectl
-RUN  mv ./kubectl /usr/local/bin/kubectl
+RUN mkdir /temp
+RUN curl -o /temp/kubectl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+RUN chmod +x /temp/kubectl &&  mv /temp/kubectl /usr/local/bin/kubectl
